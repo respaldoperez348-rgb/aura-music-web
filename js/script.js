@@ -179,6 +179,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Render vector star SVGs for cards
+  const renderStarSVGs = (stars) => {
+    let html = '<div class="stars-vector-row">';
+    for (let i = 1; i <= 5; i++) {
+      const fill = i <= stars ? '#ffb800' : 'rgba(255, 255, 255, 0.15)';
+      html += `<svg width="13" height="13" viewBox="0 0 24 24" fill="${fill}"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+    }
+    html += '</div>';
+    return html;
+  };
+
   // Render a review card into the feed
   const prependReviewCard = (name, stars, comment, dateStr) => {
     if (!reviewsContainer) return;
@@ -186,12 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
     card.className = 'review-item-card';
     card.style.animation = 'fadeIn 0.4s ease';
 
-    const starsHtml = '★'.repeat(stars) + '☆'.repeat(5 - stars);
+    const starsHtml = renderStarSVGs(stars);
 
     card.innerHTML = `
       <div class="review-card-top">
         <span class="reviewer-name">${escapeHtml(name)}</span>
-        <span class="review-stars-static">${starsHtml}</span>
+        ${starsHtml}
       </div>
       <p class="review-text-content">${escapeHtml(comment)}</p>
       <div class="review-timestamp">${dateStr}</div>

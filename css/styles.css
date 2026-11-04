@@ -1417,11 +1417,21 @@ details[open] .faq-icon-cross {
   margin-top: 8px;
 }
 
+.stars-vector-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.stars-vector-row svg {
+  flex-shrink: 0;
+}
+
 /* ==========================================================================
    Reportes Page (reportes.html) Form Styles
    ========================================================================== */
 .report-page-wrapper {
-  max-width: 800px;
+  max-width: 780px;
   margin: 40px auto 80px;
   padding: 0 24px;
 }
@@ -1430,45 +1440,240 @@ details[open] .faq-icon-cross {
   background: var(--bg-card);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-xl);
-  padding: 44px 36px;
+  padding: 40px 36px;
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow-window);
 }
 
-.platform-chips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 10px;
+.report-header-block {
+  margin-bottom: 28px;
+}
+
+.tracker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.tracker-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+.tracker-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 8px 0;
+}
+
+.tracker-subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 640px;
+}
+
+.form-group {
   margin-bottom: 20px;
 }
 
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+}
+
+.label-optional {
+  text-transform: none;
+  color: var(--text-tertiary);
+  font-weight: 400;
+  font-family: var(--font-body);
+}
+
+.platform-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .platform-chips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .chip-option {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 14px;
+  padding: 11px 12px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   user-select: none;
+  font-family: var(--font-body);
+}
+
+.chip-option svg {
+  flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
 .chip-option:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
   color: var(--text-primary);
 }
 
 .chip-option.active {
-  background: rgba(255, 95, 86, 0.12);
-  border-color: #ff5f56;
-  color: #ff5f56;
-  box-shadow: 0 0 16px rgba(255, 95, 86, 0.2);
+  background: rgba(0, 240, 255, 0.07);
+  border-color: rgba(0, 240, 255, 0.6);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.12);
+}
+
+.chip-option.active svg {
+  stroke: var(--cyan);
+}
+
+.chip-option.active svg[fill="currentColor"] {
+  fill: var(--cyan);
+}
+
+.form-actions-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.btn-submit-report {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  background: #ffffff;
+  color: #050608;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.btn-submit-report:hover {
+  background: var(--cyan);
+  box-shadow: 0 4px 20px var(--cyan-glow);
+  transform: translateY(-1px);
+}
+
+.btn-github-issue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.btn-github-issue:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Success notification card */
+.report-success-box {
+  margin-top: 24px;
+  padding: 24px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: var(--radius-md);
+  animation: fadeIn 0.3s ease;
+}
+
+.success-box-inner {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.success-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.success-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.success-desc {
+  color: #a7f3d0;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 @media (max-width: 900px) {
