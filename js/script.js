@@ -1,13 +1,12 @@
 /**
- * Aura Music - Landing Page Scripts
- * Native ecosystem for Android, Windows & Linux
+ * AURA MUSIC — Boutique Web Architecture & Interactive Script
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header.site-header');
-  const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+  const header = document.querySelector('.site-header');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   const sections = document.querySelectorAll('section[id]');
-  const detailsElements = document.querySelectorAll('details');
+  const detailsElements = document.querySelectorAll('.faq-item');
 
   // 1. Header scroll effect (blur & shadow)
   const handleScroll = () => {
@@ -21,34 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  // 2. Interactive Showcase Tabs (Noctis style)
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const showcaseScreens = document.querySelectorAll('.showcase-screen');
-  const showcaseInfos = document.querySelectorAll('.showcase-info');
+  // 2. Interactive Segmented Control Showcase
+  const segmentButtons = document.querySelectorAll('.segment-btn');
+  const showcaseSlides = document.querySelectorAll('.showcase-slide');
+  const showcaseMetas = document.querySelectorAll('.showcase-meta-bar');
 
-  tabButtons.forEach(btn => {
+  segmentButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      
-      // Update active button
-      tabButtons.forEach(b => b.classList.remove('active'));
+      const targetId = btn.getAttribute('data-slide');
+      if (!targetId) return;
+
+      // Update active segmented button
+      segmentButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Update active screen
-      showcaseScreens.forEach(screen => {
-        if (screen.id === targetId) {
-          screen.classList.add('active');
+      // Update active slide
+      showcaseSlides.forEach(slide => {
+        if (slide.id === targetId) {
+          slide.classList.add('active');
         } else {
-          screen.classList.remove('active');
+          slide.classList.remove('active');
         }
       });
 
-      // Update active info block
-      showcaseInfos.forEach(info => {
-        if (info.getAttribute('data-info') === targetId) {
-          info.style.display = 'flex';
+      // Update active meta description bar
+      showcaseMetas.forEach(meta => {
+        if (meta.getAttribute('data-meta') === targetId) {
+          meta.style.display = 'flex';
         } else {
-          info.style.display = 'none';
+          meta.style.display = 'none';
         }
       });
     });
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => observer.observe(section));
   }
 
-  // 4. Smooth scrolling for anchor links with header offset
+  // 4. Smooth scrolling with header offset
   navLinks.forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Accordion behavior: close other details when opening one
+  // 5. Accordion: smooth toggle & single-open mode
   detailsElements.forEach(detail => {
     detail.addEventListener('toggle', () => {
       if (detail.open) {
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. OS Detection to highlight appropriate download button
+  // 6. OS Detection to highlight appropriate download badge
   const detectOS = () => {
     const userAgent = window.navigator.userAgent.toLowerCase();
     const platform = window.navigator.platform?.toLowerCase() || '';
