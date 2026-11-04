@@ -321,13 +321,13 @@
   </section>
 
   <!-- ==========================================================================
-       Bento Grid — Core Engineering Pillars
+       Bento Grid — Core Engineering Pillars (Real Implemented Architecture)
        ========================================================================== -->
   <section id="arquitectura" class="section-container">
     <div class="section-header">
-      <div class="section-label">Arquitectura de Software</div>
-      <h2 class="section-heading">Ingeniería sin intermediarios ni latencias.</h2>
-      <p class="section-description">Diseñamos el pipeline de reproducción desde el chip hacia la pantalla para erradicar las esperas de carga de las plataformas convencionales.</p>
+      <div class="section-label">Capacidades Reales del Sistema</div>
+      <h2 class="section-heading">Ingeniería acústica y sincronización sin intermediarios.</h2>
+      <p class="section-description">Todo lo que ves aquí está programado y activo en el código fuente de Aura Music para Android y Escritorio.</p>
     </div>
 
     <div class="bento-grid">
@@ -336,18 +336,18 @@
         <div class="bento-icon-box">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
-        <h3>Motor de Precarga en Cola (Fast-Path en RAM)</h3>
-        <p>Al reproducir una pista, Aura resuelve y almacena en memoria los streams de las siguientes 3 canciones (<code>+1, +2, +3</code>) y la previa (<code>-1</code>). Al saltar de pista, el audio arranca en 0 milisegundos sin llamadas de red adicionales.</p>
+        <h3>Motor Fast-Path en RAM con Deduplicación In-Flight</h3>
+        <p>Impulsado por AndroidX Media3 1.5.1 en móvil y motor de bajo consumo en PC. Mientras escuchas una canción, Aura precarga en memoria las URL de las siguientes 3 pistas (<code>+1, +2, +3</code>) y la previa (<code>-1</code>). Si ya se estaba resolviendo una pista, se reutiliza el hilo en curso evitando llamadas duplicadas de red.</p>
         
         <div class="bento-interactive-preview">
           <div style="display: flex; justify-content: space-between; color: var(--text-tertiary); margin-bottom: 8px;">
-            <span>PIPELINE DE MEMORIA</span>
-            <span style="color: var(--cyan);">LATENCIA: 0 ms</span>
+            <span>PIPELINE MULTI-PISTA EXOPLAYER</span>
+            <span style="color: var(--cyan);">LATENCIA: ~240 ms / SALTO: 0 ms</span>
           </div>
           <div style="color: #ccd4e4; line-height: 1.6;">
-            <span style="color: #34d399;">✓ [EN REPRODUCCIÓN]</span> Kool & The Gang — Get Down On It (160 kbps)<br/>
-            <span style="color: var(--cyan);">⚡ [EN RAM +1]</span> RADWIMPS — Celebration (Resuelto en búfer)<br/>
-            <span style="color: var(--cyan);">⚡ [EN RAM +2]</span> Daft Punk — Instant Crush (Precarga lista)
+            <span style="color: #34d399;">✓ [REPRODUCIENDO]</span> Jaze — Desconectado (Media3 AudioTrack listo)<br/>
+            <span style="color: var(--cyan);">⚡ [RAM BUFFER +1]</span> Daft Punk — Get Lucky (Stream resuelto en memoria)<br/>
+            <span style="color: var(--cyan);">⚡ [RAM BUFFER +2]</span> Kool & The Gang — Get Down On It (Precarga en curso)
           </div>
         </div>
       </div>
@@ -357,34 +357,61 @@
         <div class="bento-icon-box amber">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/></svg>
         </div>
-        <h3>Hardware AudioFX</h3>
-        <p>Ecualizador físico de 5 bandas calibradas: <code>60 Hz</code>, <code>230 Hz</code>, <code>910 Hz</code>, <code>3.6 kHz</code> y <code>14 kHz</code>. BassBoost analógico y Virtualizer 3D integrados al DAC del dispositivo.</p>
+        <h3>Hardware AudioFX (5 Bandas)</h3>
+        <p>Ecualizador físico con acceso directo al DSP: <code>60 Hz</code>, <code>230 Hz</code>, <code>910 Hz</code>, <code>3.6 kHz</code> y <code>14 kHz</code>. Incluye Bass Boost analógico, Virtualizer 3D y presets: <em>Cyberpunk, Synthwave, Bass Boost, Vocal Clarity</em>.</p>
         
-        <div style="margin-top: auto; padding-top: 20px; display: flex; gap: 4px; align-items: flex-end; height: 36px;">
-          <span style="flex:1; height:60%; background:var(--amber); border-radius:3px;"></span>
+        <div style="margin-top: auto; padding-top: 20px; display: flex; gap: 5px; align-items: flex-end; height: 38px;">
+          <span style="flex:1; height:65%; background:var(--amber); border-radius:3px;"></span>
           <span style="flex:1; height:85%; background:var(--amber); border-radius:3px;"></span>
-          <span style="flex:1; height:40%; background:var(--amber); border-radius:3px;"></span>
-          <span style="flex:1; height:70%; background:var(--amber); border-radius:3px;"></span>
+          <span style="flex:1; height:45%; background:var(--amber); border-radius:3px;"></span>
+          <span style="flex:1; height:75%; background:var(--amber); border-radius:3px;"></span>
           <span style="flex:1; height:95%; background:var(--amber); border-radius:3px;"></span>
         </div>
       </div>
 
-      <!-- Card 3: Push-to-Phone Sync (Col 6) -->
+      <!-- Card 3: Street DSP (Aura Sense) (Col 4) -->
+      <div class="bento-card col-4">
+        <div class="bento-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <h3>Aura Sense (Street DSP)</h3>
+        <p>Compensación adaptativa de ruido exterior para auriculares. Ejecuta análisis FFT en RAM con ciclo de trabajo de 400ms cada 6s (0% de impacto en batería y sin guardar grabaciones).</p>
+      </div>
+
+      <!-- Card 4: Importador de Spotify (Col 4) -->
+      <div class="bento-card col-4">
+        <div class="bento-icon-box purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h3>Importador Nativo de Spotify</h3>
+        <p>Pega el enlace de cualquier playlist pública de Spotify y el módulo <code>SpotifyImporter</code> reconstruye la lista completa en Aura Music con carátulas y metadatos en un solo clic.</p>
+      </div>
+
+      <!-- Card 5: Aura Link P2P (Col 4) -->
+      <div class="bento-card col-4">
+        <div class="bento-icon-box amber">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        </div>
+        <h3>Aura Link (Red Local P2P)</h3>
+        <p>Servidor HTTP integrado en Android en el puerto <code>8765</code>. Permite streaming local por Wi-Fi y control directo de transporte sin necesidad de conexión externa a internet.</p>
+      </div>
+
+      <!-- Card 6: Push-to-Phone Sync (Col 6) -->
       <div class="bento-card col-6">
         <div class="bento-icon-box purple">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
         </div>
-        <h3>Push-to-Phone en Tiempo Real</h3>
-        <p>Vinculación sin credenciales ni cuentas externas. Usa Firebase Cloud Messaging para emitir órdenes de favoritos, encolado y descargas remotas desde el escritorio directo al smartphone.</p>
+        <h3>Push-to-Phone en Tiempo Real (FCM)</h3>
+        <p>Vinculación instantánea mediante tu código seguro (ej. <code>aura_sync_98d4c912</code>). Al marcar favoritos, crear listas o pulsar reproducir en Aura Desktop, el móvil recibe la orden en milisegundos vía Firebase Cloud Messaging.</p>
       </div>
 
-      <!-- Card 4: Scoped Storage & Privacidad (Col 6) -->
+      <!-- Card 7: Scoped Storage & Descargas (Col 6) -->
       <div class="bento-card col-6">
         <div class="bento-icon-box">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
         </div>
-        <h3>Privacidad Absoluta & Scoped Storage</h3>
-        <p>Sin telemetría, sin rastreo de actividad y sin métricas comerciales. El escáner local de Android 10+ extrae carátulas en memoria segura sin exponer el almacenamiento del usuario.</p>
+        <h3>Miniaturas Android 10+ & Descargas Reales</h3>
+        <p>Motor propio <code>AudioThumbnailFetcher</code> compatible con Scoped Storage (MediaMetadataRetriever) para mostrar carátulas reales de tus MP3/FLAC locales, con descargas directas a la carpeta pública de música.</p>
       </div>
     </div>
   </section>
@@ -522,15 +549,15 @@
       </a>
 
       <!-- Telegram Card -->
-      <a href="https://t.me/AuraMusicApp" target="_blank" rel="noopener" class="community-tile telegram">
+      <a href="https://t.me/AuraMusicOficial2" target="_blank" rel="noopener" class="community-tile telegram">
         <div class="community-tile-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
           </svg>
         </div>
-        <h4>Canal de Telegram</h4>
-        <p>Descargas directas de nuevos APKs y notificaciones de releases estables para PC.</p>
-        <span class="tile-action-link" style="color: #229ed9;">Abrir canal oficial →</span>
+        <h4>Canal Oficial de Telegram</h4>
+        <p>Descargas directas de nuevos APKs, changelogs y notificaciones de releases estables para PC.</p>
+        <span class="tile-action-link" style="color: #229ed9;">Unirse a @AuraMusicOficial2 →</span>
       </a>
 
       <!-- GitHub Profile Card -->
@@ -646,7 +673,7 @@
       <a href="https://github.com/respaldoperez348-rgb/AURA-MUSIC-ANDROID" target="_blank" rel="noopener">GitHub Android</a>
       <a href="https://github.com/respaldoperez348-rgb/Aura-Music-Escritorio" target="_blank" rel="noopener">GitHub Escritorio</a>
       <a href="https://discord.gg/aura-music" target="_blank" rel="noopener">Discord</a>
-      <a href="https://t.me/AuraMusicApp" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://t.me/AuraMusicOficial2" target="_blank" rel="noopener">Telegram Oficial</a>
       <a href="https://buymeacoffee.com/davyperez" target="_blank" rel="noopener">Cafecito ☕</a>
     </div>
   </footer>
