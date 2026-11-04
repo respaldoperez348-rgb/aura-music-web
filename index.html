@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Music – El Reproductor Libre para Android y Escritorio</title>
+  <meta name="description" content="Reproductor de música de alta fidelidad sin anuncios con streaming libre, DSP por hardware, letras sincronizadas y sincronización remota Push-to-Phone entre PC y Android.">
+  <meta name="theme-color" content="#07080f">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aura Music – Ecosistema de Audio Libre para Móvil y PC">
+  <meta property="og:description" content="Streaming libre sin anuncios, 250ms de latencia, ecualizador DSP de 5 bandas y sincronización en vivo Push-to-Phone entre Android y Windows/Linux.">
+  <meta property="og:image" content="assets/img/desktop_dark.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Scripts -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+<div class="landing-wrapper">
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="site-logo">
+      <img src="assets/img/logo.png" alt="Aura Music Logo" />
+      <span>AURA</span>
+      <span class="tag">ECOSYSTEM</span>
+    </div>
+
+    <nav class="site-nav">
+      <a href="#funciones">Funciones</a>
+      <a href="#showcase">Galería</a>
+      <a href="#sync">Sincronización</a>
+      <a href="#comparativa">Comparativa</a>
+      <a href="#comunidad">Comunidad</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#descargas">Descargas</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="https://github.com/respaldoperez348-rgb" target="_blank" rel="noopener" class="btn-icon" aria-label="GitHub de David Tineo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+        </svg>
+      </a>
+      <a href="#descargas" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px; min-height: 40px;">
+        Descargar
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="pill">
+        <span class="pill-dot"></span>
+        Ecosistema Nativo • Android + Windows + Linux
+      </div>
+
+      <h1>
+        Tu música en el móvil y en el PC, <br/>
+        <span class="gradient-text">siempre al mismo compás.</span>
+      </h1>
+
+      <p>
+        Reproductor de alta fidelidad con streaming libre sin anuncios, ecualizador DSP por hardware, letras karaoke sincronizadas y sincronización remota instantánea <strong>Push-to-Phone</strong>.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://github.com/respaldoperez348-rgb/AURA-MUSIC-ANDROID/releases">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1523-.5676.416.416 0 00-.5676.1523l-2.0223 3.503C15.5894 8.4026 13.8567 8 12 8s-3.5894.4026-5.1366.9499L4.8411 5.4469a.4166.4166 0 00-.5677-.1523.4157.4157 0 00-.1522.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+          </svg>
+          Descargar APK (Android v2.1.4)
+        </a>
+
+        <a class="btn btn-secondary" href="https://github.com/respaldoperez348-rgb/Aura-Music-Escritorio/releases">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.401H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.951-1.849"/>
+          </svg>
+          Descargar PC (Windows / Linux)
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Mockup with Real Visuals -->
+    <div class="hero-visual">
+      <div class="sync-badge-live">
+        <span class="pill-dot"></span>
+        AURA SYNC • VINCULADO EN VIVO
+      </div>
+
+      <div class="mockup-desktop">
+        <img src="assets/img/desktop_dark.jpg" alt="Aura Music Desktop Interface en Modo Oscuro" />
+      </div>
+
+      <div class="mockup-mobile-float">
+        <img src="assets/img/android_player.jpg" alt="Aura Music Android Studio Deck Player" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Infinite Marquee Ticker (Noctis style) -->
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="highlight">⚡ 250ms</span> LATENCIA BUFFER CERO</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item">🎛️ HARDWARE DSP 5 BANDAS</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item"><span class="highlight">🔄 PUSH-TO-PHONE</span> SYNC NATIVO</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item">🎤 LETRAS KARAOKE EN VIVO</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item"><span class="highlight">📂 ANDROID 10+</span> SCOPED STORAGE</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item">💎 100% LIBRE Y SIN ANUNCIOS</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item"><span class="highlight">🚀 FAST-PATH</span> 0MS SALTO EN RAM</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item">🎧 AURA SENSE STREET DSP</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item"><span class="highlight">🎨 5 PALETAS</span> CLARO Y OSCURO</div>
+      <div class="marquee-separator">•</div>
+
+      <!-- Duplicated for seamless infinite loop -->
+      <div class="marquee-item"><span class="highlight">⚡ 250ms</span> LATENCIA BUFFER CERO</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item">🎛️ HARDWARE DSP 5 BANDAS</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item"><span class="highlight">🔄 PUSH-TO-PHONE</span> SYNC NATIVO</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item">🎤 LETRAS KARAOKE EN VIVO</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item"><span class="highlight">📂 ANDROID 10+</span> SCOPED STORAGE</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item">💎 100% LIBRE Y SIN ANUNCIOS</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item"><span class="highlight">🚀 FAST-PATH</span> 0MS SALTO EN RAM</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item">🎧 AURA SENSE STREET DSP</div>
+      <div class="marquee-separator">•</div>
+      <div class="marquee-item"><span class="highlight">🎨 5 PALETAS</span> CLARO Y OSCURO</div>
+      <div class="marquee-separator">•</div>
+    </div>
+  </div>
+
+  <!-- Interactive Multi-View Showcase (Inspired by Noctis: Choose the view that suits you) -->
+  <section id="showcase" class="showcase-section">
+    <div class="section-head">
+      <div class="pill">Galería Visual</div>
+      <h2>La vista que tú elijas, con fidelidad absoluta.</h2>
+      <p>Una estética Cyberpunk y analógica diseñada meticulosamente tanto para la pantalla de tu ordenador como para el bolsillo.</p>
+    </div>
+
+    <!-- Tabs switcher -->
+    <div class="showcase-tabs">
+      <button class="tab-btn active" data-target="view-desktop-dark">
+        🖥️ Escritorio (Modo Oscuro)
+      </button>
+      <button class="tab-btn" data-target="view-desktop-light">
+        ☀️ Escritorio (Champagne Claro)
+      </button>
+      <button class="tab-btn" data-target="view-lyrics">
+        🎤 Letras Karaoke en Vivo
+      </button>
+      <button class="tab-btn" data-target="view-mobile-player">
+        📱 Android (Studio Deck)
+      </button>
+      <button class="tab-btn" data-target="view-mobile-dsp">
+        🎛️ Android (Hardware DSP)
+      </button>
+      <button class="tab-btn" data-target="view-mobile-library">
+        📂 Android (Tu Biblioteca)
+      </button>
+    </div>
+
+    <!-- Display Frame -->
+    <div class="showcase-display">
+      <div id="view-desktop-dark" class="showcase-screen active">
+        <img src="assets/img/desktop_dark.jpg" alt="Aura Desktop Studio Carbon Dark Mode" />
+      </div>
+      <div id="view-desktop-light" class="showcase-screen">
+        <img src="assets/img/desktop_light.jpg" alt="Aura Desktop Champagne Hi-Fi Light Mode" />
+      </div>
+      <div id="view-lyrics" class="showcase-screen">
+        <img src="assets/img/desktop_lyrics.jpg" alt="Aura Desktop Karaoke Synced Lyrics" />
+      </div>
+      <div id="view-mobile-player" class="showcase-screen">
+        <img src="assets/img/android_player.jpg" alt="Aura Mobile Studio Deck Player" />
+      </div>
+      <div id="view-mobile-dsp" class="showcase-screen">
+        <img src="assets/img/android_dsp.jpg" alt="Aura Mobile Hardware DSP 5 Band Equalizer" />
+      </div>
+      <div id="view-mobile-library" class="showcase-screen">
+        <img src="assets/img/android_library.jpg" alt="Aura Mobile Library Collections" />
+      </div>
+
+      <!-- Information bar corresponding to tab -->
+      <div class="showcase-info" data-info="view-desktop-dark">
+        <div>
+          <h3>Aura Desktop — Modo Oscuro (Studio Carbon)</h3>
+          <p>Interfaz de cristal translúcido con resplandores neón cian. Acceso instantáneo a Selección Rápida, Artistas Seguidos y panel de control sincronizado en vivo.</p>
+        </div>
+        <span class="pill">WINDOWS & LINUX</span>
+      </div>
+
+      <div class="showcase-info" data-info="view-desktop-light" style="display: none;">
+        <div>
+          <h3>Aura Desktop — Modo Claro (Champagne Hi-Fi)</h3>
+          <p>Elegancia limpia inspirada en equipos analógicos de latón y titanio. Máximo contraste diurno sin perder la estética de estudio.</p>
+        </div>
+        <span class="pill">ALTO CONTRASTE</span>
+      </div>
+
+      <div class="showcase-info" data-info="view-lyrics" style="display: none;">
+        <div>
+          <h3>Letras Karaoke en Tiempo Real con Resplandor Neón</h3>
+          <p>Sincronización línea por línea integrada con LRCLIB y caché local. La línea activa brilla con resplandor cian reactivo al ritmo de la voz.</p>
+        </div>
+        <span class="pill">LRCLIB INTEGRADO</span>
+      </div>
+
+      <div class="showcase-info" data-info="view-mobile-player" style="display: none;">
+        <div>
+          <h3>Studio Deck — Reproductor Inmersivo en Android</h3>
+          <p>Controles de hardware flotantes, carátula en alta definición, dock frosted glass y botón de favoritos con feedback táctil inmediato.</p>
+        </div>
+        <span class="pill">JETPACK COMPOSE</span>
+      </div>
+
+      <div class="showcase-info" data-info="view-mobile-dsp" style="display: none;">
+        <div>
+          <h3>Hardware DSP & Aura Sense (Street DSP)</h3>
+          <p>Ecualizador de 5 bandas, BassBoost y Surround 3D directo a los chips de audio del teléfono, con compensación FFT de ruido ambiental para auriculares.</p>
+        </div>
+        <span class="pill">AUDIOFX NATIVO</span>
+      </div>
+
+      <div class="showcase-info" data-info="view-mobile-library" style="display: none;">
+        <div>
+          <h3>Biblioteca Local y Colecciones Offline</h3>
+          <p>Extracción de carátulas en Android 10+ mediante Scoped Storage, soporte de listas, descargas directas al almacenamiento y favoritos unificados.</p>
+        </div>
+        <span class="pill">SCOPED STORAGE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture & Features (6 Pillars) -->
+  <section id="funciones" style="max-width: 1240px; margin: 0 auto; padding: 40px 32px 100px;">
+    <div class="section-head">
+      <div class="pill">Arquitectura & Funciones</div>
+      <h2>Construido para sonar mejor y responder al instante.</h2>
+      <p>Cero rodeos, cero telemetría invasiva y un motor de audio de baja latencia sin rival.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="card feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast-Path en RAM (0 ms)</h3>
+        <p>Al pulsar siguiente, la música suena de inmediato. El motor precarga en memoria las URL de las siguientes 3 canciones (`+1, +2, +3`) para una transición sin pausas.</p>
+      </div>
+
+      <div class="card feature-card">
+        <div class="feature-icon purple">🎛️</div>
+        <h3>Suite Hardware DSP</h3>
+        <p>Ecualizador milimétrico de 5 bandas (60 Hz a 14 kHz), Bass Boost físico y Aura Sense para desmascarar frecuencias en la calle mediante análisis FFT en RAM.</p>
+      </div>
+
+      <div class="card feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>Push-to-Phone en Tiempo Real</h3>
+        <p>Sincronización remota instantánea entre el reproductor de Windows/Linux y tu teléfono móvil vía FCM. Marca una canción en el PC y tu móvil la recibe.</p>
+      </div>
+
+      <div class="card feature-card">
+        <div class="feature-icon purple">🎤</div>
+        <h3>Karaoke Sincronizado</h3>
+        <p>Integración con el repositorio abierto LRCLIB. Ajuste fino de desfase vocal y visualización bilingüe de letras para tus canciones favoritas.</p>
+      </div>
+
+      <div class="card feature-card">
+        <div class="feature-icon">📂</div>
+        <h3>Descargas Reales al Disco</h3>
+        <p>Descarga canciones completas con metadatos incrustados y carátulas nativas para Android 10+ gracias al motor propio `AudioThumbnailFetcher`.</p>
+      </div>
+
+      <div class="card feature-card">
+        <div class="feature-icon purple">💎</div>
+        <h3>100% Libre y Privado</h3>
+        <p>Cero publicidad comercial, cero rastreo y sin suscripciones obligatorias. Ambos clientes son de código abierto y auditables en GitHub.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Synchronization Section (#sync) -->
+  <section id="sync" style="max-width: 1240px; margin: 0 auto; padding: 40px 32px 100px;">
+    <div style="background: radial-gradient(circle at 50% 50%, rgba(34,229,255,0.08), transparent 70%), var(--card-bg); border: 1px solid var(--card-border); border-radius: 28px; padding: 56px 40px; backdrop-filter: blur(14px);">
+      <div class="section-head" style="margin-bottom: 30px;">
+        <div class="pill">Ecosistema Integrado</div>
+        <h2>Aura Desktop Sync: Dos pantallas, una sola biblioteca.</h2>
+        <p>Olvídate de exportar archivos o crear cuentas en la nube. Tu código local enlaza ambos mundos en segundos.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px;">
+        <div class="card" style="padding: 24px;">
+          <div style="font-family: var(--font-mono); color: var(--accent); font-size: 13px; margin-bottom: 8px;">PASO 01</div>
+          <h4 style="font-size: 20px; margin-bottom: 8px;">Copia tu código en Android</h4>
+          <p style="color: var(--text-muted); font-size: 14px;">Abre Configuración en la app móvil y toca tu identificador único de sincronización (ej. <code>aura_sync_98d4c912</code>).</p>
+        </div>
+
+        <div class="card" style="padding: 24px;">
+          <div style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 13px; margin-bottom: 8px;">PASO 02</div>
+          <h4 style="font-size: 20px; margin-bottom: 8px;">Pégalo en el Escritorio</h4>
+          <p style="color: var(--text-muted); font-size: 14px;">En Aura Desktop, introduce el código en la barra superior. El enlace se establece instantáneamente mediante Firebase Cloud Messaging.</p>
+        </div>
+
+        <div class="card" style="padding: 24px;">
+          <div style="font-family: var(--font-mono); color: var(--accent); font-size: 13px; margin-bottom: 8px;">PASO 03</div>
+          <h4 style="font-size: 20px; margin-bottom: 8px;">Control Total Push-to-Phone</h4>
+          <p style="color: var(--text-muted); font-size: 14px;">Tus favoritos, playlists e historial se reflejan en ambas pantallas. Manda órdenes de reproducción desde el PC directo al teléfono.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section (#comparativa, Noctis style) -->
+  <section id="comparativa" class="compare-section">
+    <div class="section-head">
+      <div class="pill">Dónde Estamos</div>
+      <h2>Aura Music frente a los gigantes del streaming.</h2>
+      <p>Comparamos nuestra propuesta abierta y ligera con las alternativas corporativas y otros reproductores comunitarios.</p>
+    </div>
+
+    <div class="compare-table-wrapper">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>CARACTERÍSTICA</th>
+            <th class="highlight">AURA MUSIC</th>
+            <th>SPOTIFY / YT MUSIC</th>
+            <th>NOCTIS / FOOBAR</th>
+            <th>OTRAS APPS LIBRES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cero Publicidad & 100% Gratuito</strong></td>
+            <td class="highlight"><span class="compare-badge-yes">✓ 100% Libre</span></td>
+            <td><span class="compare-badge-no">✗ Suscripción paga</span></td>
+            <td><span class="compare-badge-yes">✓ Libre (Offline)</span></td>
+            <td><span class="compare-badge-yes">✓ Libre</span></td>
+          </tr>
+          <tr>
+            <td><strong>Latencia de Inicio (Buffer)</strong></td>
+            <td class="highlight"><span class="compare-badge-yes">✓ ~250 ms (Inmediato)</span></td>
+            <td><span class="compare-badge-warn">⚠ 1.5 - 3.0 s</span></td>
+            <td><span class="compare-badge-yes">✓ Local</span></td>
+            <td><span class="compare-badge-warn">⚠ 2.0 - 4.0 s</span></td>
+          </tr>
+          <tr>
+            <td><strong>Salto de Pista (Next / Skip)</strong></td>
+            <td class="highlight"><span class="compare-badge-yes">✓ 0 ms (Fast-Path en RAM)</span></td>
+            <td><span class="compare-badge-warn">⚠ Recarga de red</span></td>
+            <td><span class="compare-badge-yes">✓ 0 ms local</span></td>
+            <td><span class="compare-badge-warn">⚠ Reintento HTTP</span></td>
+          </tr>
+          <tr>
+            <td><strong>Sincronización PC ↔ Móvil</strong></td>
+            <td class="highlight"><span class="compare-badge-yes">✓ Push-to-Phone FCM</span></td>
+            <td><span class="compare-badge-warn">⚠ Spotify Connect cerrado</span></td>
+            <td><span class="compare-badge-no">✗ Solo escritorio</span></td>
+            <td><span class="compare-badge-no">✗ Inexistente</span></td>
+          </tr>
+          <tr>
+            <td><strong>Hardware DSP en Móvil</strong></td>
+            <td class="highlight"><span class="compare-badge-yes">✓ 5 Bandas + Street DSP</span></td>
+            <td><span class="compare-badge-warn">⚠ Ecualizador básico</span></td>
+            <td><span class="compare-badge-no">✗ No disponible en móvil</span></td>
+            <td><span class="compare-badge-no">✗ Sin DSP por hardware</span></td>
+          </tr>
+          <tr>
+            <td><strong>Letras Sincronizadas (Karaoke)</strong></td>
+            <td class="highlight"><span class="compare-badge-yes">✓ LRCLIB con brillo reactivo</span></td>
+            <td><span class="compare-badge-warn">⚠ Bloqueado en Free</span></td>
+            <td><span class="compare-badge-yes">✓ Integrado</span></td>
+            <td><span class="compare-badge-warn">⚠ Desfase común</span></td>
+          </tr>
+          <tr>
+            <td><strong>Biblioteca Local (Android 10+)</strong></td>
+            <td class="highlight"><span class="compare-badge-yes">✓ AudioThumbnailFetcher</span></td>
+            <td><span class="compare-badge-no">✗ Restringido / Bloqueado</span></td>
+            <td><span class="compare-badge-no">✗ No aplica en Android</span></td>
+            <td><span class="compare-badge-warn">⚠ Error de carátulas vacías</span></td>
+          </tr>
+          <tr>
+            <td><strong>Importador de Spotify</strong></td>
+            <td class="highlight"><span class="compare-badge-yes">✓ Nativo en 1 clic</span></td>
+            <td><span class="compare-badge-no">✗ No permitido</span></td>
+            <td><span class="compare-badge-no">✗ Plugins externos</span></td>
+            <td><span class="compare-badge-warn">⚠ Scripts complejos</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Community, Support & Social Links (#comunidad) -->
+  <section id="comunidad" class="community-section">
+    <div class="section-head">
+      <div class="pill">Comunidad & Soporte</div>
+      <h2>Únete al desarrollo y apoya el proyecto.</h2>
+      <p>Aura Music crece gracias al feedback de la comunidad. Conversa con otros usuarios, reporta bugs o invítale un café a David para mantener vivos los servidores.</p>
+    </div>
+
+    <div class="community-grid">
+      <!-- Discord Card -->
+      <a href="https://discord.gg/aura-music" target="_blank" rel="noopener" class="community-card discord">
+        <div class="community-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.128 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+        </div>
+        <h4>Comunidad en Discord</h4>
+        <p>Canales de discusión, sugerencias de funciones, votación de novedades y soporte directo.</p>
+        <span class="action-link" style="color: #5865f2;">Unirse al Discord →</span>
+      </a>
+
+      <!-- Telegram Card -->
+      <a href="https://t.me/AuraMusicApp" target="_blank" rel="noopener" class="community-card telegram">
+        <div class="community-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+        </div>
+        <h4>Canal de Telegram</h4>
+        <p>Avisos de nuevas versiones de APK, releases para Windows y changelogs instantáneos.</p>
+        <span class="action-link" style="color: #229ed9;">Unirse al Telegram →</span>
+      </a>
+
+      <!-- GitHub Profile Card -->
+      <a href="https://github.com/respaldoperez348-rgb" target="_blank" rel="noopener" class="community-card github">
+        <div class="community-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+          </svg>
+        </div>
+        <h4>GitHub de David</h4>
+        <p>Revisa el código fuente completo, contribuye con PRs o deja una estrella en los repositorios.</p>
+        <span class="action-link" style="color: #f1f4fb;">Ver proyectos en GitHub →</span>
+      </a>
+
+      <!-- Buy Me A Coffee / Donations Card -->
+      <a href="https://buymeacoffee.com/davyperez" target="_blank" rel="noopener" class="community-card coffee">
+        <div class="community-icon">☕</div>
+        <h4>Invítame un Cafecito</h4>
+        <p>Aura Music es 100% gratuito. Tu apoyo ayuda a cubrir los costos de servidores y desarrollo activo.</p>
+        <span class="action-link" style="color: #ffdd00;">Donar un café →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion (#faq) -->
+  <section id="faq" class="faq-section">
+    <div class="section-head">
+      <div class="pill">FAQ</div>
+      <h2>Preguntas Frecuentes</h2>
+      <p>Todo lo que necesitas saber sobre el funcionamiento de Aura Music.</p>
+    </div>
+
+    <details open>
+      <summary>¿Necesito instalar ambas aplicaciones obligatoriamente?</summary>
+      <p>No. Aura Music Android funciona como reproductor móvil independiente y Aura Music Desktop como reproductor de escritorio completo. Si decides usar ambas, se sincronizan al instante mediante tu código de vinculación sin necesidad de crear cuentas.</p>
+    </details>
+
+    <details>
+      <summary>¿En qué sistemas operativos funciona Aura Music Desktop?</summary>
+      <p>El reproductor de escritorio es compatible con Windows 10/11 (64-bit) y distribuciones de Linux (Arch, Ubuntu, Fedora, Debian). Los binarios se generan de forma automatizada mediante GitHub Actions.</p>
+    </details>
+
+    <details>
+      <summary>¿Cómo vinculo mi teléfono con mi ordenador?</summary>
+      <p>Solo toma dos segundos: abre Aura Music en tu Android, ve a Configuración, copia tu código (ej. <code>aura_sync_98d4c912</code>) y pégalo en el reproductor de escritorio. La vinculación queda guardada permanentemente.</p>
+    </details>
+
+    <details>
+      <summary>¿Por qué Aura Music cambia de canción tan rápido?</summary>
+      <p>A diferencia de otras aplicaciones que esperan a que pulses «Siguiente» para consultar a la red, Aura Music precarga en la memoria RAM las URL de las siguientes canciones de tu cola. Al saltar, la transición es de 0 milisegundos.</p>
+    </details>
+
+    <details>
+      <summary>¿De dónde provienen las letras de las canciones?</summary>
+      <p>Se consultan en tiempo real del repositorio abierto LRCLIB con respaldo a fuentes sincronizadas. Una vez descargadas, quedan guardadas en la memoria caché para que puedas cantar en modo offline.</p>
+    </details>
+
+    <details>
+      <summary>¿Mis datos y hábitos de escucha son privados?</summary>
+      <p>Totalmente. No recopilamos telemetría, no vendemos datos a anunciantes ni instalamos rastreadores. Tu música y tus listas pertenecen únicamente a tu dispositivo.</p>
+    </details>
+  </section>
+
+  <!-- Final Download Banner (#descargas) -->
+  <section id="descargas" class="download-section">
+    <div class="download-banner">
+      <h2>Llévate Aura Music a todos lados.</h2>
+      <p>Elige tu plataforma y descarga la última versión estable sin costos ni registros obligatorios.</p>
+
+      <div class="download-buttons">
+        <a class="btn btn-primary" href="https://github.com/respaldoperez348-rgb/AURA-MUSIC-ANDROID/releases">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1523-.5676.416.416 0 00-.5676.1523l-2.0223 3.503C15.5894 8.4026 13.8567 8 12 8s-3.5894.4026-5.1366.9499L4.8411 5.4469a.4166.4166 0 00-.5677-.1523.4157.4157 0 00-.1522.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+          </svg>
+          Descargar para Android (APK v2.1.4)
+        </a>
+
+        <a class="btn btn-secondary" href="https://github.com/respaldoperez348-rgb/Aura-Music-Escritorio/releases">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.401H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.951-1.849"/>
+          </svg>
+          Descargar para Windows (v1.0)
+        </a>
+
+        <a class="btn btn-ghost" href="https://github.com/respaldoperez348-rgb/Aura-Music-Escritorio">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+          </svg>
+          Linux & Código en GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="assets/img/logo.png" width="24" height="24" style="border-radius: 6px;" alt="Aura Logo" />
+      <span>Aura Music · Creado por <strong>David Tineo</strong></span>
+    </div>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <a href="https://github.com/respaldoperez348-rgb/AURA-MUSIC-ANDROID" target="_blank" rel="noopener">GitHub Android</a>
+      <a href="https://github.com/respaldoperez348-rgb/Aura-Music-Escritorio" target="_blank" rel="noopener">GitHub Escritorio</a>
+      <a href="https://discord.gg/aura-music" target="_blank" rel="noopener">Discord</a>
+      <a href="https://t.me/AuraMusicApp" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://buymeacoffee.com/davyperez" target="_blank" rel="noopener">Invitar Café ☕</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
