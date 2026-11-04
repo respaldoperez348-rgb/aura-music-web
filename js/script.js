@@ -126,5 +126,143 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   detectOS();
 
+  // 7. Interactive 5-Star Community Rating & Reviews System
+  const starButtons = document.querySelectorAll('.star-svg-btn');
+  const starValueInput = document.getElementById('selectedStarValue');
+  const starRatingLabel = document.getElementById('starRatingLabel');
+  const reviewForm = document.getElementById('communityReviewForm');
+  const reviewsContainer = document.getElementById('reviewsContainer');
+
+  const starDescriptions = {
+    1: '1 / 5 Por mejorar',
+    2: '2 / 5 Regular',
+    3: '3 / 5 Bueno',
+    4: '4 / 5 Muy bueno',
+    5: '5 / 5 Excelente'
+  };
+
+  const updateStarsDisplay = (rating) => {
+    starButtons.forEach(btn => {
+      const val = parseInt(btn.getAttribute('data-value'), 10);
+      if (val <= rating) {
+        btn.classList.add('selected');
+      } else {
+        btn.classList.remove('selected');
+      }
+    });
+    if (starRatingLabel && starDescriptions[rating]) {
+      starRatingLabel.textContent = starDescriptions[rating];
+    }
+  };
+
+  starButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const rating = parseInt(btn.getAttribute('data-value'), 10);
+      if (starValueInput) starValueInput.value = rating;
+      updateStarsDisplay(rating);
+    });
+
+    btn.addEventListener('mouseenter', () => {
+      const hoverVal = parseInt(btn.getAttribute('data-value'), 10);
+      starButtons.forEach(b => {
+        const val = parseInt(b.getAttribute('data-value'), 10);
+        if (val <= hoverVal) {
+          b.classList.add('hovered');
+        } else {
+          b.classList.remove('hovered');
+        }
+      });
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      starButtons.forEach(b => b.classList.remove('hovered'));
+    });
+  });
+
+  // Render a review card into the feed
+  const prependReviewCard = (name, stars, comment, dateStr) => {
+    if (!reviewsContainer) return;
+    const card = document.createElement('div');
+    card.className = 'review-item-card';
+    card.style.animation = 'fadeIn 0.4s ease';
+
+    const starsHtml = '★'.repeat(stars) + '☆'.repeat(5 - stars);
+
+    card.innerHTML = `
+      <div class="review-card-top">
+        <span class="reviewer-name">${escapeHtml(name)}</span>
+        <span class="review-stars-static">${starsHtml}</span>
+      </div>
+      <p class="review-text-content">${escapeHtml(comment)}</p>
+      <div class="review-timestamp">${dateStr}</div>
+    `;
+
+    reviewsContainer.prepend(card);
+  };
+
+  const escapeHtml = (str) => {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  };
+
+  // Load persisted user reviews from localStorage
+  const loadStoredReviews = () => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('aura_community_reviews') || '[]');
+      stored.forEach(r => {
+        prependReviewCard(r.name, r.stars, r.comment, r.date);
+      });
+    } catch (e) {
+      console.error('Error loading stored reviews:', e);
+    }
+  };
+  loadStoredReviews();
+
+  // Review Form Submit Handler
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('reviewerName');
+      const commentInput = document.getElementById('reviewerComment');
+      const rating = parseInt(starValueInput?.value || '5', 10);
+
+      const name = nameInput.value.trim() || 'Usuario de Aura';
+      const comment = commentInput.value.trim();
+
+      if (!comment) return;
+
+      const dateStr = 'Reciente • Publicado por ti';
+
+      // Prepend to visible feed
+      prependReviewCard(name, rating, comment, dateStr);
+
+      // Save to localStorage
+      try {
+        const stored = JSON.parse(localStorage.getItem('aura_community_reviews') || '[]');
+        stored.push({ name, stars: rating, comment, date: 'Reciente' });
+        localStorage.setItem('aura_community_reviews', JSON.stringify(stored));
+      } catch (err) {
+        console.error('Error saving review:', err);
+      }
+
+      // Reset Form & show friendly toast
+      commentInput.value = '';
+      const submitBtn = reviewForm.querySelector('.btn-submit-review');
+      if (submitBtn) {
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '✓ ¡Valoración Publicada!';
+        submitBtn.style.background = '#34d399';
+        submitBtn.style.color = '#000000';
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '';
+          submitBtn.style.color = '';
+        }, 2500);
+      }
+    });
+  }
+
   console.log('🎵 Aura Music Landing Page initialized successfully.');
 });

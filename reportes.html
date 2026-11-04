@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportar Error — Aura Music</title>
+  <meta name="description" content="Centro oficial de reporte de errores, incidencias y sugerencias para Aura Music Android y Aura Music Desktop.">
+  <meta name="theme-color" content="#090a0f">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Minimal Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-badge">
+        <img src="assets/img/logo.png" alt="Aura Logo" />
+        <span class="brand-name">AURA</span>
+        <span class="brand-tag">BUG TRACKER</span>
+      </a>
+
+      <div class="nav-controls">
+        <a href="index.html" class="btn-pill">
+          ← Volver al Inicio
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Report Form Container -->
+  <main class="report-page-wrapper">
+    <div class="report-card-form">
+      <div style="margin-bottom: 28px;">
+        <div class="pill" style="border-color: rgba(255, 95, 86, 0.4); color: #ff5f56; background: rgba(255, 95, 86, 0.1);">
+          <span class="pill-dot" style="background: #ff5f56; box-shadow: 0 0 8px #ff5f56;"></span>
+          Diagnóstico y Mejora Continua
+        </div>
+        <h1 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 38px); font-weight: 800; color: #ffffff; margin-top: 14px; line-height: 1.1;">
+          Centro de Reporte de Errores
+        </h1>
+        <p style="color: var(--text-secondary); font-size: 15px; margin-top: 8px;">
+          ¿Encontraste algún bug, lentitud o fallo en la reproducción? Déjanos los detalles para investigar el caso y lanzar el parche en la siguiente actualización.
+        </p>
+      </div>
+
+      <form id="bugReportForm">
+        <!-- Plataforma -->
+        <div style="margin-bottom: 20px;">
+          <label class="star-picker-label">1. Plataforma Afectada</label>
+          <div class="platform-chips-grid">
+            <div class="chip-option active" data-platform="Android Móvil">📱 Android Móvil</div>
+            <div class="chip-option" data-platform="Windows PC">💻 Windows PC</div>
+            <div class="chip-option" data-platform="Linux PC">🐧 Linux PC</div>
+            <div class="chip-option" data-platform="Push-to-Phone Sync">🔄 Aura Sync P2P</div>
+          </div>
+          <input type="hidden" id="selectedPlatform" value="Android Móvil">
+        </div>
+
+        <!-- Modelo y Versión -->
+        <div style="margin-bottom: 20px;">
+          <label class="star-picker-label" for="deviceModel">2. Modelo del Dispositivo & Versión del Sistema</label>
+          <input type="text" id="deviceModel" class="input-field" placeholder="Ej: Xiaomi 13 (Android 14) / Windows 11 x64 / Fedora 40" required>
+        </div>
+
+        <!-- Versión de Aura Music -->
+        <div style="margin-bottom: 20px;">
+          <label class="star-picker-label" for="appVersion">3. Versión de la Aplicación (Aproximada)</label>
+          <input type="text" id="appVersion" class="input-field" placeholder="Ej: v2.1.4 Release / v1.0 Desktop / Última descargada" required>
+        </div>
+
+        <!-- Título del Fallo -->
+        <div style="margin-bottom: 20px;">
+          <label class="star-picker-label" for="bugTitle">4. Resumen del Error</label>
+          <input type="text" id="bugTitle" class="input-field" placeholder="Ej: La portada tarda en aparecer al buscar o la letra va adelantada" required>
+        </div>
+
+        <!-- Descripción y Pasos -->
+        <div style="margin-bottom: 20px;">
+          <label class="star-picker-label" for="bugDescription">5. Descripción Detallada & Pasos para Reproducirlo</label>
+          <textarea id="bugDescription" class="input-field textarea-field" rows="5" placeholder="¿Qué estabas haciendo cuando ocurrió? ¿Ocurre siempre o solo con ciertas canciones o artistas?" required></textarea>
+        </div>
+
+        <!-- Contacto Opcional -->
+        <div style="margin-bottom: 28px;">
+          <label class="star-picker-label" for="userContact">6. Tu Correo, Discord o Telegram (Opcional)</label>
+          <input type="text" id="userContact" class="input-field" placeholder="Para avisarte cuando el error quede solucionado">
+        </div>
+
+        <!-- Botón Enviar -->
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+          <button type="submit" class="hero-cta-btn cyan-solid" style="border: none; cursor: pointer; padding: 14px 32px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Enviar Reporte de Error
+          </button>
+
+          <a href="https://github.com/respaldoperez348-rgb/AURA-MUSIC-ANDROID/issues" target="_blank" rel="noopener" class="hero-cta-btn glass-dark" style="font-size: 14px; padding: 14px 22px;">
+            Crear Issue en GitHub →
+          </a>
+        </div>
+      </form>
+
+      <!-- Mensaje de Éxito Oculto -->
+      <div id="reportSuccessAlert" style="display: none; margin-top: 24px; padding: 24px; background: rgba(52, 211, 153, 0.12); border: 1px solid #34d399; border-radius: var(--radius-md); animation: fadeIn 0.3s ease;">
+        <div style="display: flex; gap: 14px; align-items: center;">
+          <span style="font-size: 28px;">✅</span>
+          <div>
+            <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 4px;">¡Reporte registrado correctamente!</h4>
+            <p style="color: #a7f3d0; font-size: 14px; line-height: 1.5;">
+              Muchas gracias por colaborar con el proyecto. David revisará la descripción técnica para aplicar el parche en la siguiente compilación.
+            </p>
+          </div>
+        </div>
+        <div style="margin-top: 18px;">
+          <a href="index.html" class="btn-pill primary">Volver a la página principal</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer-bar">
+    <div class="footer-left">
+      <img src="assets/img/logo.png" alt="Aura Logo" />
+      <span>Aura Music — Canal de Soporte</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://t.me/AuraMusicOficial2" target="_blank" rel="noopener">Telegram Oficial</a>
+      <a href="https://discord.gg/2fPm9WvF" target="_blank" rel="noopener">Discord</a>
+      <a href="https://github.com/respaldoperez348-rgb" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    // Selector de chips de plataforma
+    const chips = document.querySelectorAll('.chip-option');
+    const platformInput = document.getElementById('selectedPlatform');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        platformInput.value = chip.getAttribute('data-platform');
+      });
+    });
+
+    // Envío del reporte con persistencia local
+    const form = document.getElementById('bugReportForm');
+    const successAlert = document.getElementById('reportSuccessAlert');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const reportData = {
+        id: 'report_' + Date.now(),
+        platform: platformInput.value,
+        device: document.getElementById('deviceModel').value,
+        version: document.getElementById('appVersion').value,
+        title: document.getElementById('bugTitle').value,
+        description: document.getElementById('bugDescription').value,
+        contact: document.getElementById('userContact').value || 'Anónimo',
+        date: new Date().toISOString()
+      };
+
+      // Guardar en localStorage
+      try {
+        const existing = JSON.parse(localStorage.getItem('aura_bug_reports') || '[]');
+        existing.push(reportData);
+        localStorage.setItem('aura_bug_reports', JSON.stringify(existing));
+      } catch (err) {
+        console.error('Error guardando reporte:', err);
+      }
+
+      form.style.display = 'none';
+      successAlert.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

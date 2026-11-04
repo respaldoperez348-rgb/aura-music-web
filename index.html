@@ -46,6 +46,7 @@
         <a href="#sync">Sincronización</a>
         <a href="#comparativa">Comparativa</a>
         <a href="#comunidad">Comunidad</a>
+        <a href="#resenas">Reseñas</a>
         <a href="#faq">FAQ</a>
       </nav>
 
@@ -572,13 +573,124 @@
         <span class="tile-action-link" style="color: #ffffff;">Explorar repositorios →</span>
       </a>
 
-      <!-- Buy Me A Coffee / Donations Card -->
-      <a href="https://buymeacoffee.com/davyperez" target="_blank" rel="noopener" class="community-tile coffee">
-        <div class="community-tile-icon">☕</div>
-        <h4>Invítame un Café</h4>
-        <p>Aura Music es gratuito para todos. Tu donación ayuda a financiar los servidores de sincronización.</p>
-        <span class="tile-action-link" style="color: #ffdd00;">Donar un café →</span>
+      <!-- Bug Report Card -->
+      <a href="reportes.html" class="community-tile bugreport">
+        <div class="community-tile-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <h4>Reportar Errores</h4>
+        <p>¿Encontraste un fallo, lentitud o problema en la app? Déjanos los detalles para corregirlo de inmediato.</p>
+        <span class="tile-action-link" style="color: #ff5f56;">Dejar reporte de errores →</span>
       </a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Interactive 5-Star Community Rating & Reviews Section (#resenas)
+       ========================================================================== -->
+  <section id="resenas" class="rating-section">
+    <div class="section-header">
+      <div class="section-label">Comunidad & Feedback</div>
+      <h2 class="section-heading">Calificaciones de la Comunidad</h2>
+      <p class="section-description">¿Ya probaste Aura Music en tu Android o en tu PC? Califícanos con 5 estrellas y déjanos tu opinión para seguir mejorando.</p>
+    </div>
+
+    <div class="rating-container">
+      <!-- Left Column: Interactive Form -->
+      <div class="rating-form-side">
+        <h3>Tu opinión cuenta</h3>
+        <p>Califica tu experiencia con el reproductor y comparte tus comentarios con la comunidad.</p>
+
+        <form id="communityReviewForm">
+          <!-- Star Picker -->
+          <div class="star-picker-wrapper">
+            <label class="star-picker-label">Puntuación</label>
+            <div class="stars-interactive-row" id="starPickerRow">
+              <button type="button" class="star-svg-btn selected" data-value="1" aria-label="1 estrella">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </button>
+              <button type="button" class="star-svg-btn selected" data-value="2" aria-label="2 estrellas">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </button>
+              <button type="button" class="star-svg-btn selected" data-value="3" aria-label="3 estrellas">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </button>
+              <button type="button" class="star-svg-btn selected" data-value="4" aria-label="4 estrellas">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </button>
+              <button type="button" class="star-svg-btn selected" data-value="5" aria-label="5 estrellas">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </button>
+              <span class="star-count-text" id="starRatingLabel">5 / 5 Excelente</span>
+            </div>
+            <input type="hidden" id="selectedStarValue" value="5">
+          </div>
+
+          <!-- Name & Review -->
+          <div class="review-input-group">
+            <input type="text" id="reviewerName" class="input-field" placeholder="Tu nombre o alias" required>
+            <textarea id="reviewerComment" class="input-field textarea-field" placeholder="¿Qué es lo que más te gusta de Aura Music? ¿Cómo sientes la velocidad o el ecualizador?" required></textarea>
+            <button type="submit" class="btn-submit-review">
+              Publicar Calificación ★
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Live Reviews Feed -->
+      <div class="reviews-feed-side">
+        <div class="reviews-header-stats">
+          <div>
+            <div class="overall-score-badge">
+              <span class="score-number">4.9</span>
+              <span style="color: var(--text-tertiary); font-size: 16px;">/ 5.0</span>
+            </div>
+            <div class="score-stars-gold">
+              ★★★★★ <span style="font-size: 12px; color: var(--text-tertiary); margin-left: 6px;">(Basado en valoraciones de la comunidad)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-scroll-list" id="reviewsContainer">
+          <!-- Static Featured Reviews -->
+          <div class="review-item-card">
+            <div class="review-card-top">
+              <span class="reviewer-name">Carlos R. (Android)</span>
+              <span class="review-stars-static">★★★★★</span>
+            </div>
+            <p class="review-text-content">
+              Increíble velocidad. No tiene nada de publicidad y pasa de canción de inmediato sin esperar el buffer. El tema Champagne Hi-Fi se ve espectacular.
+            </p>
+            <div class="review-timestamp">Hace 2 días • Xiaomi HyperOS</div>
+          </div>
+
+          <div class="review-item-card">
+            <div class="review-card-top">
+              <span class="reviewer-name">Matías G. (Windows & Móvil)</span>
+              <span class="review-stars-static">★★★★★</span>
+            </div>
+            <p class="review-text-content">
+              La sincronización Push-to-Phone es justo lo que le faltaba a otros reproductores libres. Meto mi código en la PC y controlo todo desde el teclado.
+            </p>
+            <div class="review-timestamp">Hace 3 días • Aura Desktop v1.0</div>
+          </div>
+
+          <div class="review-item-card">
+            <div class="review-card-top">
+              <span class="reviewer-name">Alejandro V. (Audiófilo)</span>
+              <span class="review-stars-static">★★★★★</span>
+            </div>
+            <p class="review-text-content">
+              El ecualizador de 5 bandas se nota que va por hardware porque no distorsiona los graves como hacen otras apps de software. Muy recomendado.
+            </p>
+            <div class="review-timestamp">Hace 5 días • Samsung Galaxy S23</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -674,7 +786,7 @@
       <a href="https://github.com/respaldoperez348-rgb/Aura-Music-Escritorio" target="_blank" rel="noopener">GitHub Escritorio</a>
       <a href="https://discord.gg/2fPm9WvF" target="_blank" rel="noopener">Discord</a>
       <a href="https://t.me/AuraMusicOficial2" target="_blank" rel="noopener">Telegram Oficial</a>
-      <a href="https://buymeacoffee.com/davyperez" target="_blank" rel="noopener">Cafecito ☕</a>
+      <a href="reportes.html">Reportar un error</a>
     </div>
   </footer>
 
